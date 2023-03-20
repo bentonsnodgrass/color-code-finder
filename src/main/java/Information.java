@@ -34,7 +34,7 @@ public class Information {
                 System.out.println("Invalid entry. Try again.");
             }
         }while (!isQuit);
-        new ColorCodeFinder();
+//        new ColorCodeFinder();
 
     }
 

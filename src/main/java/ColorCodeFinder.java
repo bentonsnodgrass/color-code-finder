@@ -25,27 +25,33 @@ public class ColorCodeFinder {
 
     public static void colorFinder() {
         Scanner scanner = new Scanner(System.in);
+        boolean isQuit = false;
         // what is the 25 pair color code?
         // it's for POTS (Plain Old Telephone Service)
         // https://en.wikipedia.org/wiki/25-pair_color_code
 
 
-        System.out.println("Enter a pair number (integer): ");
+        do {
+            System.out.println("Enter a pair number (integer) up to 3000: ");
+            String pairString = scanner.nextLine();
+            String[] pairArr = pairString.split(" ");
 
-        String pairString = scanner.nextLine();
-        String[] pairArr = pairString.split(" ");
 
-        for (String num : pairArr) {
-          int pairNumber = Integer.parseInt(num);
-            System.out.println("----------------------------------------------------------------------------------");
-            System.out.printf("%nFor pair %s, the super binder is: %s %n",pairNumber, superBinderColor(pairNumber));
-            System.out.printf("the binder color is: %s%n", binderColor(pairNumber));
-            System.out.printf("and the pair color is: %s%n", pairColor(pairNumber));
-            System.out.println("----------------------------------------------------------------------------------");
-        }
+            if (pairString.equalsIgnoreCase("q")) {
+                isQuit = true;
+            } else if (Integer.parseInt(pairString) > 0 && Integer.parseInt(pairString) < 3001) {
+                int pairNumber = Integer.parseInt(pairString);
+                System.out.println("----------------------------------------------------------------------------------");
+                System.out.printf("%nFor pair %s, the super binder is: %s %n",pairNumber, superBinderColor(pairNumber));
+                System.out.printf("the binder color is: %s%n", binderColor(pairNumber));
+                System.out.printf("and the pair color is: %s%n", pairColor(pairNumber));
+                System.out.println("----------------------------------------------------------------------------------");
+            } else {
+                System.out.println("Invalid entry, try again.");
+            }
+        } while (!isQuit);
+
     }
-
-
 
 
     public static String superBinderColor(int pairNumber){
