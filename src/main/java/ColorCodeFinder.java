@@ -1,9 +1,25 @@
 import java.util.Scanner;
 
 public class ColorCodeFinder {
-    public static void main(String[] args) {
-    colorFinder();
 
+    public static void main(String[] args) {
+        boolean isQuit = false;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Welcome to the color code finder!");
+
+        do {
+            System.out.printf("%n%nEnter 'c' to continue. %nEnter 'i' for more information, %nEnter 'q' to quit.%n%n");
+            String userInput = scanner.nextLine();
+
+            if (userInput.equalsIgnoreCase("q")) {
+                isQuit = true;
+            } else if (userInput.equalsIgnoreCase("c")){
+                colorFinder();
+            } else if( userInput.equalsIgnoreCase("i")) {
+                Information.informationMenu();
+            }
+        } while (!isQuit);
 
     }
 
@@ -12,28 +28,12 @@ public class ColorCodeFinder {
         // what is the 25 pair color code?
         // it's for POTS (Plain Old Telephone Service)
         // https://en.wikipedia.org/wiki/25-pair_color_code
-        System.out.println("Welcome to the color code finder!");
-        System.out.printf("%nWhat is the 25 pair color code?%n");
-        System.out.println("For more information, press 'y'. Otherwise press any key to continue.");
-        String moreInfo = scanner.nextLine();
-        if (moreInfo.equals("y")) {
-            explanationText();
-        }
 
 
         System.out.println("Enter a pair number (integer): ");
 
         String pairString = scanner.nextLine();
         String[] pairArr = pairString.split(" ");
-
-//        for (int i = 0; i < 601; i++) {
-//            int pairNumber = i;
-//            System.out.println("---------------------------------------------------------------");
-//            System.out.printf("%nFor pair %s binder is: %s and the pair color is: %s%n%n",pairNumber,binderColor(pairNumber),pairColor(pairNumber));
-//            System.out.println("---------------------------------------------------------------");
-//        }
-
-
 
         for (String num : pairArr) {
           int pairNumber = Integer.parseInt(num);
@@ -45,18 +45,7 @@ public class ColorCodeFinder {
         }
     }
 
-    public static void explanationText() {
-        System.out.println("It is a color code for telecommunications wiring.");
-        System.out.println("This color code is most commonly used for identifying ");
-        System.out.println("copper cable pairs for POTS (Plain Old Telephone Service)");
-        System.out.printf("as well as DSL and VDSL services.%n%n");
 
-        System.out.println("Each pair of wires is given a numeric value which corresponds");
-        System.out.println("to a color combination. If you've ever seen a whole rats nest of");
-        System.out.println("multicolored telecommunications wiring, this color code is what ");
-        System.out.println("allows people to tell each wire apart.");
-        System.out.println();
-    }
 
 
     public static String superBinderColor(int pairNumber){
@@ -81,12 +70,13 @@ public class ColorCodeFinder {
 
 
     public static String pairColor(int pairNumber) {
-        int pairDivide = pairNumber;
-        if (pairNumber > 25) {
-            pairDivide = (pairNumber-1) / 25;
-            pairNumber = pairNumber - (pairDivide*25);
+        int pairDivide = pairNumber%25;
+        if (pairDivide == 0) {
+                pairDivide = 25;
+//            pairDivide = (pairNumber-1) / 25;
+//            pairNumber = pairNumber - (pairDivide*25);
         }
-        String pairColor = tipColor(pairNumber) + "/"+ ringColor(pairNumber);
+        String pairColor = tipColor(pairDivide) + "/"+ ringColor(pairDivide);
         return pairColor;
 
     }
