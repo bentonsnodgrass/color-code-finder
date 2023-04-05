@@ -28,12 +28,12 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../pair-programming/java-blue-week2-team6/exercise" />
-    <property name="settings.editor.selected.configurable" value="preferences.updates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.general" />
   </component>
-  <component name="RunManager" selected="Application.ColorCodeFinder">
-    <configuration name="ColorCodeFinder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ColorCodeFinder" />
+  <component name="RunManager" selected="Application.Application">
+    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Application" />
       <module name="PairColorCode" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -46,9 +46,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CopperColorCode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CopperColorCode" />
+      <module name="PairColorCode" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scratch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Scratch" />
+      <module name="PairColorCode" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ColorCodeFinder" />
+        <item itemvalue="Application.Application" />
+        <item itemvalue="Application.CopperColorCode" />
+        <item itemvalue="Application.Scratch" />
         <item itemvalue="Application.ColorCodeFinder2" />
       </list>
     </recent_temporary>

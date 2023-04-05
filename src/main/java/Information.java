@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Information {
-
+    private static Scanner scanner = new Scanner(System.in);
 
     public static void explanationText() {
         System.out.println("It is a color code for telecommunications wiring.");
@@ -20,7 +20,6 @@ public class Information {
 
     public static void informationMenu() {
         boolean isQuit = false;
-        Scanner scanner = new Scanner(System.in);
         do {
             System.out.printf("%nWhat is the 25 pair color code?%n");
             explanationText();
@@ -34,7 +33,7 @@ public class Information {
                 System.out.println("Invalid entry. Try again.");
             }
         }while (!isQuit);
-//        new ColorCodeFinder();
+
 
     }
 
